@@ -14,9 +14,14 @@
  limitations under the License.
 -->
 
+<!-- amp-ad - Container to display an ad.
+amp-img - Replacement for the HTML img tag.
+amp-pixel - Used as tracking pixel to count page views.
+amp-video - Replacement for the HTML5 video tag. -->
+
 <!doctype html>
 <html ⚡ lang="en">
-  <head>
+  <head> 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
@@ -91,6 +96,59 @@
   <body>
     <header>
       News Site
+      <amp-ad
+        width="300"
+        height="250"
+        type="doubleclick"
+        data-slot="/35096353/amptesting/image/static">
+      </amp-ad>
+      <!-- <amp-ad width=320 height=568
+          type = "flite"
+          data-guid = "aa7bf589-6d51-4194-91f4-d22eef8e3688"
+          data-mixins="">
+      </amp-ad> -->
+      <amp-ad
+        width="300"
+        height="250"
+        type="a9"
+        data-aax_size="300x250"
+        data-aax_pubname="test123"
+        data-aax_src="302">
+      </amp-ad>
+      <amp-ad
+        width="300"
+        height="250"
+        type="doubleclick"
+        data-slot="/35096353/amptesting/geo/uk">
+        <div fallback>No ad appeared because you're not browsing from the UK!</div>
+      </amp-ad>
+      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+      <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
+      <amp-ad
+        width="300"
+        height="250"
+        type="doubleclick"
+        data-slot="/35096353/amptesting/geo/us">
+        <div fallback>No ad appeared because you're not browsing from the US!</div>
+      </amp-ad>
+      <amp-youtube
+        data-videoid="PMivT7MJ41M"
+        layout="responsive"
+        width="480"
+        height="270">
+        <div fallback>
+          <p>The video could not be loaded.</p>
+        </div>
+      </amp-youtube>
+
+      <amp-twitter
+        width="486"
+        height="657"
+        layout="responsive"
+        data-tweetid="638793490521001985">
+      </amp-twitter>
+
     </header>
     <article>
       <h1>Article Name</h1>
@@ -98,6 +156,8 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
 
       <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+
+
     </article>
   </body>
 </html>
