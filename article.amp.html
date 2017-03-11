@@ -37,19 +37,35 @@ amp-video - Replacement for the HTML5 video tag. -->
         margin: 0;
         padding: 0;
       }
-
+      .home-button {
+  float: left;
+}
       header {
         background: Tomato;
         color: white;
         font-size: 2em;
         text-align: center;
       }
+      .sub-menu {
+        background: black;
+      }
 
+      .sub-menu a {
+        display: block;
+        background: tomato;
+        margin: 5px;
+        padding: 5px;
+        color: white;
+        text-decoration: none;
+      }
       h1 {
         margin: 0;
         padding: 0.5em;
         background: white;
         box-shadow: 0px 3px 5px grey;
+      }
+      amp-fit-text {
+          white-space: normal;
       }
 
       p {
@@ -95,6 +111,10 @@ amp-video - Replacement for the HTML5 video tag. -->
   </head>
   <body>
     <header>
+      <a href="article.amp.html">
+        <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+      </a>
+
       News Site
       <amp-ad
         width="300"
@@ -149,7 +169,80 @@ amp-video - Replacement for the HTML5 video tag. -->
         data-tweetid="638793490521001985">
       </amp-twitter>
 
+      <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+      <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+        Big, bold article quote goes here.
+      </amp-fit-text>
+      <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+        #YOLO
+      </amp-fit-text>
+      <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+         And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon's that is dreaming, And the lamp-light o'er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+      </amp-fit-text>
+      <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+     <amp-carousel layout="responsive" width="300" height="168" 
+             type="slides" autoplay delay="2000" loop>
+      <amp-img src="mountains-1.jpg" width="300" height="168" layout="responsive"></amp-img>
+      <amp-img src="mountains-2.jpg" width="300" height="168" layout="responsive"></amp-img>
+      <amp-img src="mountains-3.jpg" width="300" height="168" layout="responsive"></amp-img>
+    </amp-carousel>
+
+    <amp-carousel layout="fixed-height" height="250" type="carousel" >
+      <amp-img src="blocky-mountains-1.jpg" width="300" height="250"></amp-img>
+        <amp-ad width="300" height="250"
+          type="doubleclick"
+          data-slot="/35096353/amptesting/image/static">
+            <div placeholder>This advert is still loading.</div>
+        </amp-ad>
+
+        <amp-fit-text width="300" height="250" layout="fixed">
+            Big, bold article quote goes here.
+        </amp-fit-text>
+    </amp-carousel>
+
+    <!-- Analytics --> 
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <amp-analytics type="googleanalytics">
+    <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        },
+        "click on #header trigger": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "examples",
+            "eventAction": "clicked-header"
+          }
+        }
+      }
+    }
+    </script>
+    </amp-analytics>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+
     </header>
+    <div class="sub-menu">
+      <amp-carousel layout="fixed-height" height="38" type="carousel">
+        <a href="#example1">Example 1</a>
+        <a href="#example2">Example 2</a>
+        <a href="#example3">Longer Named Example 3</a>
+        <a href="#example4">Example 4</a>
+        <a href="#example5">Example 5</a>
+        <a href="#example6">Example 6</a>
+      </amp-carousel>
+    </div>
+    
     <article>
       <h1>Article Name</h1>
 
